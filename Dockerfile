@@ -58,8 +58,8 @@ RUN cd /usr/local && ln -s ./hbase-1.4.2 hbase
 ENV HBASE_HOME /usr/local/hbase
 ENV PATH="/usr/local/hbase/bin:${PATH}"
 
-
-RUN chmod a+rwx -R /usr/local/hbase/
+#megan commented line out
+#RUN chmod a+rwx -R /usr/local/hbase/
 
 
 # Make vim nice
