@@ -1,4 +1,5 @@
 # Fetch ubuntu 16.04 LTS docker image
+#https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 FROM ubuntu:16.04
 
 #Make a copy of ubuntu apt repository before modifying it. 
