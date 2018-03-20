@@ -40,8 +40,8 @@ ENV PATH="/usr/local/hadoop/bin:${PATH}"
 RUN sed -i "/^export JAVA_HOME/ s:.*:export JAVA_HOME=$JAVA_HOME\nexport HADOOP_PREFIX=/usr/local/hadoop\nexport HADOOP_HOME=/usr/local/hadoop\n:" $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh
 RUN sed -i '/^export HADOOP_CONF_DIR/ s:.*:export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop/:' $HADOOP_PREFIX/etc/hadoop/hadoop-env.sh
 
-
-RUN chmod a+rwx -R /usr/local/hadoop/
+#megan commented line out
+#RUN chmod a+rwx -R /usr/local/hadoop/
 COPY autosu /usr/local/bin
 RUN chmod 777 /usr/local/bin/autosu
 RUN adduser hadoopuser --disabled-password --gecos ""
@@ -56,6 +56,8 @@ RUN cd /usr/local && ln -s ./hbase-1.4.2 hbase
 
 ENV HBASE_HOME /usr/local/hbase
 ENV PATH="/usr/local/hbase/bin:${PATH}"
+
+
 RUN chmod a+rwx -R /usr/local/hbase/
 
 
